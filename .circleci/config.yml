@@ -1,0 +1,16 @@
+version: 2.1
+
+orbs:
+  redmine_executor: na0ya/redmine-plugin-env@dev:0.0.1
+
+jobs:
+  build:
+    executor: redmine_executor/default
+    steps:
+      - redmine_executor/install
+      - run: echo "start testing... "
+
+workflows:
+  main:
+    jobs:
+      - build
